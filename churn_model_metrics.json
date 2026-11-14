@@ -1,0 +1,65 @@
+{
+  "selected_model": "random_forest",
+  "selection_criteria": [
+    "highest validation F2 (recall-weighted)",
+    "highest validation PR-AUC as tie-breaker",
+    "highest validation recall as second tie-breaker"
+  ],
+  "prediction_threshold": 0.36,
+  "positive_class": "Churn = 1",
+  "feature_selection": {
+    "method": "SelectFromModel(RandomForestClassifier, threshold='median')",
+    "selected_features": [
+      "numeric__Tenure",
+      "numeric__WarehouseToHome",
+      "numeric__NumberOfDeviceRegistered",
+      "numeric__SatisfactionScore",
+      "numeric__NumberOfAddress",
+      "numeric__Complaint",
+      "numeric__DaySinceLastOrder",
+      "numeric__CashbackAmount",
+      "categorical__PreferedOrderCat_Laptop & Accessory",
+      "categorical__MaritalStatus_Single"
+    ]
+  },
+  "dataset": "C:\\Users\\fcsbu\\Documents\\PURWADHIKA\\Capstone Module 3\\data_ecommerce_customer_churn_cleaned.csv",
+  "rows": 3269,
+  "split_rows": {
+    "train": 1961,
+    "validation": 654,
+    "test": 654,
+    "final_model_fit": 2615
+  },
+  "validation_metrics": {
+    "logistic_regression": {
+      "threshold": 0.59,
+      "precision": 0.5232558139534884,
+      "recall": 0.8411214953271028,
+      "f1": 0.6451612903225806,
+      "f2": 0.75,
+      "accuracy": 0.8486238532110092,
+      "roc_auc": 0.9061490884860497,
+      "pr_auc": 0.7200241818690668
+    },
+    "random_forest": {
+      "threshold": 0.36,
+      "precision": 0.6834532374100719,
+      "recall": 0.8878504672897196,
+      "f1": 0.7723577235772358,
+      "f2": 0.8377425044091711,
+      "accuracy": 0.9143730886850153,
+      "roc_auc": 0.9497855763809393,
+      "pr_auc": 0.8014114517146238
+    }
+  },
+  "test_metrics": {
+    "precision": 0.6258992805755396,
+    "recall": 0.8130841121495327,
+    "f1": 0.7073170731707317,
+    "f2": 0.7671957671957672,
+    "accuracy": 0.8899082568807339,
+    "roc_auc": 0.9352628611457569,
+    "pr_auc": 0.8025652280878587
+  },
+  "saved_model": "C:\\Users\\fcsbu\\Documents\\PURWADHIKA\\Capstone Module 3\\churn_model.joblib"
+}
